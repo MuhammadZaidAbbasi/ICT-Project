@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Security Topics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background:#ffffff;
+    }
+    .heading {
+      font-size: 28px;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+      margin: 2px 0;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      
+    }
+    .container {
+      width: auto;
+      margin: 10px auto;
+      height: auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #000000;
+      margin-bottom: 5px;
+      margin-top: -10px;
+    }
+    .topic {
+      margin: 4px 0;
+      padding: 4px;
+      font-size: 26px;
+      color: white;
+      background: linear-gradient(135deg, #f62222, #f4e80c);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+    .container:hover>:hover{
+        padding: 15px;
+        margin: 10px;
+        background: linear-gradient(180deg, #f62222, #f4e80c);
+        border-radius: 10px;
+        width: auto;
+        height: auto;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+    }
+    #info {
+      display: none;
+      margin-top: 10px;
+      padding: 15px;
+      font-size: 16px;
+      background-color: linear-gradient(180deg, #f62222, #f4e80c);
+      color: #333;
+      border: 4px dashed #000000;
+      border-radius: 10px;
+      background: #f9f9f9;
+      text-align: left;
+    }
+    .button{
+        border: 3px solid black;
+        border-radius: 5px;
+        height: 30px;
+        font-weight:bold;
+        margin-top: 10px;
+    }
+    .info strong {
+      color: #ff7e5f;
+    }
+  </style>
+</head>
+<body>
+  <div class="heading">INFORMATION YOU SHOULD KNOW ABOUT CYBERSECURITY</div>
+  <div class="container">
+
+    <div class="topic" onclick="showInfo('cybersecurityBasics')">Cybersecurity Basics</div>
+    <div class="topic" onclick="showInfo('cyberAttack')">Cyber Attack</div>
+    <div class="topic" onclick="showInfo('dataPrivacy')">Data Privacy</div>
+    <div class="topic" onclick="showInfo('safePractice')">Safe Practice</div>
+    <div id="info" class="info"></div>
+    <button class="button" onclick="location.href='index.html'">Back To Main Page</button>
+  </div>
+
+  <script>
+    function showInfo(topic) {
+      const infoDiv = document.getElementById('info');
+      let infoText = '';
+
+      switch (topic) {
+        case 'cyberAttack':
+          infoText = `<strong>Cyber Attacks:</strong> Cyber attacks are deliberate attempts to exploit, steal, or disrupt systems, data, and networks. 
+          They often come in various forms such as phishing, malware, ransomware, or denial-of-service attacks. 
+          Cyber attackers typically aim to steal sensitive data like personal information or trade secrets, 
+          disrupt operations by crashing servers, or demand ransom by encrypting critical files. 
+          Preventing cyber attacks requires proactive measures like implementing firewalls, regularly updating software, 
+          educating users about security risks, and investing in strong encryption protocols.`;
+          break;
+
+        case 'safePractice':
+          infoText = `<strong>Safe Practices:</strong> Safe cyber practices are essential for protecting digital assets and personal information from malicious actors. 
+          These include habits like using complex passwords, enabling two-factor authentication, and avoiding clicking on suspicious email links. 
+          Other important practices are regularly updating your devices and software, avoiding public Wi-Fi for sensitive tasks, 
+          and being cautious about sharing personal information online. Organizations can also enhance safety by conducting cybersecurity training for employees, 
+          implementing robust access controls, and performing regular security audits. 
+          A vigilant mindset and consistent adherence to safe practices are critical in an era of increasing cyber threats.`;
+          break;
+
+        case 'dataPrivacy':
+          infoText = `<strong>Data Privacy:</strong> Data privacy refers to protecting personal and sensitive information from unauthorized access, use, or disclosure. 
+          In a digital world where vast amounts of data are collected and shared, ensuring privacy has become increasingly challenging. 
+          Data privacy laws like GDPR and CCPA require organizations to handle user data responsibly by obtaining consent, encrypting sensitive information, and reporting breaches promptly. 
+          For individuals, safeguarding privacy involves being cautious about the apps and websites they use, adjusting privacy settings, and avoiding oversharing on social media. 
+          Protecting data privacy is not just a technical issue but a fundamental right that ensures individuals maintain control over their personal information.`;
+          break;
+
+        case 'cybersecurityBasics':
+          infoText = `<strong>Cybersecurity Basics:</strong> Cybersecurity basics include understanding and implementing key practices to protect systems from digital threats. 
+          Fundamental measures include installing antivirus software, using secure passwords, and enabling firewall protection. 
+          Network security, safe browsing habits, and regular system updates are equally important to prevent unauthorized access. 
+          Understanding the types of cyber threats, like phishing and malware, empowers users to identify and avoid them effectively. 
+          Cybersecurity awareness is vital in minimizing risks and ensuring digital safety in an increasingly interconnected world.`;
+          break;
+
+        default:
+          infoText = 'Select a topic to view details.';
+      }
+
+      infoDiv.innerHTML = infoText;
+      infoDiv.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

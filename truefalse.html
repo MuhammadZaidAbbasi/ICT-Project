@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>True/False Quiz</title>
+  <link rel="stylesheet" href="truefalse.css">
+</head>
+<body>
+  <div class="quiz-container" id="quiz-container" >
+    <div class="quiz-header">
+        <h2 class="header-txt">Cyber Security Assessment</h2>
+        <div class="timer" id="timer"></div>
+    </div>
+    <div class="quiz-body">
+      <h2 id="question">Question text </h2>
+        <ul>
+          <li>
+            <input type="radio" id="a" name="answer" class="answer" />
+            <label for="a" id="a_text">True</label>
+          </li>
+          <li>
+            <input type="radio" id="b" name="answer" class="answer" />
+            <label for="b" id="b_text">False</label>
+          </li>
+        </ul>    
+    </div>
+    <div class="quiz-footer">
+        <div class="quiz-details"></div>
+      <button id="backBtn" disabled>Previous</button>
+      <button id="saveBtn">Save </button>
+      <button id="nextBtn">Next </button>
+    </div>
+  </div>
+  <script src="truefalse.js"></script>
+</body>
+</html>

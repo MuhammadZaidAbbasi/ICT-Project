@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .signup-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            transition: all 0.3s ease;
+        }
+        .signup-container:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .signup-container h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+        .signup-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .signup-container input:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+        .signup-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            border: none;
+            color: #ffffff;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .signup-container button:hover {
+            background-color: #218838;
+        }
+        .signup-container p {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        .signup-container a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .signup-container a:hover {
+            text-decoration: underline;
+        }
+        .signup-container .divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            border-top: 1px solid #ccc;
+        }
+        .divider::before {
+            left: 0;
+        }
+        .divider::after {
+            right: 0;
+        }
+        .divider span {
+            background-color: #fff;
+            padding: 0 10px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Sign Up</h1>
+        <form id="signinForm">
+            <input type="text" id="name" name="name" placeholder="Full Name" required>
+            <input type="email" id="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit" onclick="location.href='index.html'">Sign Up</button>
+        </form>
+        <div class="divider">
+            <span>OR</span>
+        </div>
+        <p>Already have an account? <a href="login.html">Log In</a></p>
+    </div>
+    <script>
+        document.getElementById('signinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+        
+        const FullName = document.getElementById('name').value;
+        const usermail = document.getElementById('email').value;
+        
+        // Store username and email in sessionalStorage
+        sessionStorage.setItem('FullName', FullName);
+        sessionStorage.setItem('usermail', usermail);
+        
+        // Redirect to index.html
+        window.location.href = 'index.html';
+    });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            animation: gradientBackground 10s ease infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        .container {
+            background: rgba(239, 237, 237, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            width: auto;
+            max-width: 500px;
+            margin-top: 2px;
+            padding: 30px;
+            box-shadow: 8px 4px 10px rgba(0, 0, 0, 0);
+          
+        }
+        .nxt-btn {
+            display: block;
+            margin: 15px auto;
+            padding: 40px 30px;
+            height: auto;
+            background: linear-gradient(5deg, #f4e80c, #f62222);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            font-size: 28px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            box-shadow: 8px 4px 8px rgba(0, 0, 0, 0.2);
+            
+        }
+        .nxt-btn:hover {
+            background: linear-gradient(135deg, #f62222, #f4e80c);
+            transform: translateY(-3px);
+        }
+        .divider {
+            content: '';
+            margin-top: -5px;
+            width: 99%;
+            border-top: 4px solid #000000;
+        }
+        h2{ 
+            font-size: 36px;
+            margin-top: -5px;
+            margin-left: 11% ;
+        }
+        .quiz-footer {
+            color: rgb(255, 255, 255);
+            margin-top: 40px;
+            margin-bottom: -10px;
+            border:none;
+            }
+        .ftr-btn {
+            border:4px solid black;
+            color: black;
+            padding:8px 30px;
+            font-weight: bold;
+            border-radius: 9px;
+            font-size: 26px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            margin-left:35%;
+        }
+        .ftr-btn:hover {
+            background: linear-gradient(180deg, #f62222, #f4e80c);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Quiz Type</h2>
+        <div class="divider"> </div>
+        <div class="quiz-types">
+            <a href="mcqs.html" class="nxt-btn"> Multiple Choice Question  </a>
+            <a href="truefalse.html" class="nxt-btn"> True / False</a>
+            <a href="blank.html" class="nxt-btn"> Fill in the Blank </a>
+        </div>
+        <div class="quiz-footer">
+            <a class="ftr-btn" href="index.html" >Back</a>
+        </div>
+    </div>
+</body>
+
+</html>

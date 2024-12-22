@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background:#fbfbfb;
+            background-size: 400% 400%;
+            animation: gradientBackground 10s ease infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            position: relative; 
+            z-index: 1; 
+            background: #f6f6f6;
+            border-radius: 18px;
+            box-shadow: 2px 4px 10px 2px rgba(0, 0, 0, 0.1);
+            max-width: 650px;
+            width: 90%;
+            height: 60%;
+            text-align: center;
+            transition: transform 0.1s ease;
+            overflow: none;
+        }
+        .result p {
+            height:25px;
+            font-weight:500;
+            font-size: 150%;
+            color: rgb(0, 0, 0);
+            border: 3px solid ;
+            padding-bottom: 15px;
+            padding-top: 15px;
+            padding-left: 2px;
+            margin: 22px auto;
+            text-align: left;
+        }
+        .quiz-footer {
+            color: rgb(255, 255, 255);
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border:none;
+        }
+        .ftr-btn{
+            border:4px solid black;
+            color: black;
+            padding:8px 4px;
+            font-weight: bold;
+            border-radius: 9px;
+            font-size: 20px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .ftr-btn:hover {
+            background: linear-gradient(180deg, #f62222, #f4e80c);
+        }
+        .result-header h2{
+            text-align: center;
+            font-size: 55PX;
+            margin: auto;
+            height: 55px;
+            font-weight: 750;
+            padding-top: 10px;
+            padding-bottom: 25px;
+            background:linear-gradient(0deg, #eddf15 , rgb(221, 5, 5)) ;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+            color: #eee6de;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="result-header">
+            <h2> Result </h2>
+        </div>
+        <div class="result">
+            <p> Name : <span id="name"></span></p>
+            <p> Score : <span id="userscr"></span></p>
+        </div>
+        <div class="quiz-footer">
+            <a class="ftr-btn" href="index.html" >Back To Main Page</a>
+        </div>
+    </div>
+</body>
+    <script>
+        const username = sessionStorage.getItem('username');
+        document.getElementById('name').textContent = username;
+        const scr = sessionStorage.getItem('userscr');
+        document.getElementById('userscr').textContent = scr;
+    </script>
+
+</html>
