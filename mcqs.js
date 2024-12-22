@@ -466,20 +466,6 @@ function previousQuestion() {
 }
 
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAyh0KTPXxQRQHroqUaG_zQB4PJKMsB_qQ",
-  authDomain: "quiz-94195.firebaseapp.com",
-  databaseURL: "https://quiz-94195-default-rtdb.firebaseio.com",
-  projectId: "quiz-94195",
-  storageBucket: "quiz-94195.appspot.com",
-  messagingSenderId: "838358419225",
-  appId: "1:838358419225:web:cedfd35163dbe209822788"
-};
-
-
-
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
 
 
 
