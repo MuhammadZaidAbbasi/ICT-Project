@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+            background-size: 400% 400%;
+            animation: gradientBackground 10s ease infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+    
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            max-width: 500px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        #profile-pic {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-top:0px;
+            background: linear-gradient(100deg, #20d6ff, #23f07c);
+            line-height: 70px;
+            font-size: 16px;
+            color: #ffffff;
+            overflow:hidden;
+            background-size: cover;
+            background-position: center;
+            border: 3px solid hsl(0, 0%, 0%);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-align: center;
+        }
+        #profile-pic:hover {
+            transform: scale(1.1);
+        }
+        input:hover{
+            transform: scale(1.1);
+        }
+        input[type="file"] {
+            display: none;
+        }
+        input{
+            display: block;
+            margin: 5px auto;
+            border-radius: 5px;
+            border: solid 2px ;
+            text-align: left;
+            margin-left: 25px;    
+            padding: 5px;
+            width: 90%;
+        }
+        .profile-header {
+            display: flex;
+            height: 5%;
+            width: 86%;
+            margin-top: -20px;
+            margin-left: 8px;
+            align-items: center;
+            background: linear-gradient(180deg, #f62222, #f4e80c); 
+            border-radius: 12px;
+            padding: 30px;
+        }
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .nxt-btn {
+            display: block;
+            margin: 25px auto;
+            margin-left: 8px;
+            padding: 45px 13px;
+            width: 95%;
+            height: 80px;
+            background: linear-gradient(5deg, #f4e80c, #f62222);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            font-size: 42px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .nxt-btn:hover {
+            background: linear-gradient(135deg, #f62222, #f4e80c);
+            transform: translateY(-3px);
+        }
+    
+        .quiz-footer {
+            color: rgb(255, 255, 255);
+            margin-top: 40px;
+            margin-bottom: -40px;
+            border:none;
+            }
+        .ftr-btn {
+            border:4px solid black;
+            color: black;
+            padding:8px 12px;
+            font-weight: bold;
+            border-radius: 9px;
+            font-size: 26px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .ftr-btn:hover {
+            background: linear-gradient(180deg, #f62222, #f4e80c);
+        }
+        .divider {
+            content: '';
+            margin-top: 15px;
+            margin-bottom: -10px;
+            margin-left: 8px;
+            border-top: 4px solid #000000;
+            width: 99%;
+        }
+        h2{
+            font-size: 45px;
+            margin-top: -20PX;
+            margin-left: 20PX;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <h2>Home Page </h2>
+        <div class="profile-header">
+            <label for="file-input">
+                <div id="profile-pic">UPLOAD</div>
+            </label>
+            <div class="profile-info">
+              <input type="text" placeholder="username" class="input-field">
+              <input type="email" placeholder="abc123@gmail.com" class="input-field">
+            </div>
+        </div>
+        <input type="file" id="file-input" accept="image/*">
+        <div class="divider"> </div>
+
+        <a href="learn.html" class="nxt-btn">Learn New Thing</a>
+        <a href="quiztype.html" class="nxt-btn">Take Quiz</a>
+        <div class="quiz-footer">
+            <a class="ftr-btn" href="" >History</a>
+            <a class="ftr-btn" href="result.html">Score</a>
+            <a class="ftr-btn" href="">Setting</a>
+        </div>
+    </div>
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const profilePic = document.getElementById('profile-pic');
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    profilePic.style.backgroundImage = `url('${e.target.result}')`;
+                    profilePic.style.color = 'transparent';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+
+</html>
